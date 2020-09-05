@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MarketStatus extends ParentEntity {
-    private Market market;
+    private String market;
 
     private Double last;
     private Double open;

@@ -12,5 +12,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParentEntity implements Serializable, Cloneable {
-    private Long id;
+    private String id;
 }

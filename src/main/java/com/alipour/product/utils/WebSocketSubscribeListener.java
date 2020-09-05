@@ -45,13 +45,9 @@ public class WebSocketSubscribeListener extends WebSocketAdapter {
         if (jsonNode.hasNonNull("method")) {
             String method = jsonNode.get("method").asText();
             if (method.equalsIgnoreCase("state.update")) {
-
-                boolean b = true;
-                for (JsonNode node : jsonNode.get("params")) {
-                    if (b) {
-                        log.info(jsonUtil.mapFromJson(node).toString());
-                        b=false;
-                    }
+                for (JsonNode params : jsonNode.get("params")) {
+                    jsonUtil.mapFromJson(params).entrySet().parallelStream()
+                            .forEach(entry -> statusService.add(entry.getKey(), entry.getValue()));
                 }
             }
         }
