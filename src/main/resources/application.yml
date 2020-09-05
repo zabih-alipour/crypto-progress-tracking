@@ -1,0 +1,9 @@
+server:
+  port: 8090
+socket:
+  address: wss://socket.coinex.com/
+
+  state:
+    subscribe: state.subscribe
+
+    query: state.query
