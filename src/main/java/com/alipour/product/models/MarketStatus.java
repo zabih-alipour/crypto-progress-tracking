@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CoinexSocketResponse extends ParentEntity {
+public class MarketStatus extends ParentEntity {
     private Market market;
 
     private Double last;
@@ -19,8 +19,22 @@ public class CoinexSocketResponse extends ParentEntity {
     private Double close;
     private Double high;
     private Double low;
-    private BigDecimal volume;
     private Double sell_total;
     private Double buy_total;
+    private BigDecimal volume;
     private BigDecimal deal;
+    private Long period;
+
+
+    @Override
+    public String toString() {
+        return "MarketStatus{" +
+                "market=" + market +
+                ", last=" + last +
+                ", open=" + open +
+                ", close=" + close +
+                ", high=" + high +
+                ", low=" + low +
+                '}';
+    }
 }
